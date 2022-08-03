@@ -1,7 +1,8 @@
 import { useEffect, useReducer } from 'react';
-import { Link } from 'react-router-dom';
 import logger from 'use-reducer-logger';
 import axios from 'axios';
+import { Row, Col } from 'react-bootstrap';
+import Product from '../components/Product';
 
 //import data from '../data';
 
@@ -49,21 +50,13 @@ function HomeScreen() {
         ) : error ? (
           <div>{error}</div>
         ) : (
-          products.map((product) => (
-            <div className="product" key={product.id}>
-              <Link to={`/product/${product.slug}`}>
-                <img src={product.image} alt={product.name} />
-              </Link>
-              <div className="product-info">
-                <Link to={`/product/${product.slug}`}>
-                  <p>{product.name}</p>
-                </Link>
-                <p>
-                  <strong>{product.price}</strong>€
-                </p>
-              </div>
-            </div>
-          ))
+          <Row>
+            {products.map((product) => (
+              <Col key={product.id} sm={6} md={4} lg={3} className="mb-3">
+                <Product product={product}></Product>
+              </Col>
+            ))}
+          </Row>
         )}
       </div>
     </div>

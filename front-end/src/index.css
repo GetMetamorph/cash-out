@@ -31,10 +31,17 @@ main {
   max-width: 400px;
 }
 
-.product a {
+.card-body a {
   text-decoration: none;
 }
 
 .product-info {
   padding: 1rem;
+}
+
+.rating span {
+  color: rgb(17, 6, 139);
+}
+.reviews {
+  font-size: 14px;
 }
