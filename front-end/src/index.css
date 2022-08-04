@@ -42,6 +42,11 @@ main {
 .rating span {
   color: rgb(17, 6, 139);
 }
+
 .reviews {
   font-size: 14px;
+}
+
+.img-large {
+  max-width: 100%;
 }
