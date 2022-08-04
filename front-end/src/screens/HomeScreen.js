@@ -2,6 +2,7 @@ import { useEffect, useReducer } from 'react';
 import logger from 'use-reducer-logger';
 import axios from 'axios';
 import { Row, Col } from 'react-bootstrap';
+import { Helmet } from 'react-helmet-async';
 import Product from '../components/Product';
 
 //import data from '../data';
@@ -43,9 +44,13 @@ function HomeScreen() {
   }, []);
   return (
     <div>
+      <Helmet>
+        <title>Cash-out!</title>
+      </Helmet>
       <h1>Produits du moment</h1>
       <div className="products">
         {loading ? (
+          //<LoadingBox />
           <div>Loading...</div>
         ) : error ? (
           <div>{error}</div>

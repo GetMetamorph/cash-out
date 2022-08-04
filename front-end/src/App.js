@@ -10,16 +10,18 @@ function App() {
     <BrowserRouter>
       <div className="d-flex flex-column site-container">
         <header>
-          <Navbar bg="dark" variant="dark">
+          <Navbar className="app-navbar">
             <Container>
               <LinkContainer to="/">
-                <Navbar.Brand>Cash-out!</Navbar.Brand>
+                <Navbar.Brand className="font-effect-anaglyph">
+                  Cash-out!
+                </Navbar.Brand>
               </LinkContainer>
             </Container>
           </Navbar>
         </header>
         <main>
-          <Container>
+          <Container className="mt-3">
             <Routes>
               <Route path="/" element={<HomeScreen />} />
               <Route path="/product/:slug" element={<ProductScreen />} />

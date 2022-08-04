@@ -66,7 +66,9 @@ function ProductScreen() {
           <ListGroup variant="flush">
             <ListGroup.Item>
               {' '}
-              <title>{product.name}</title>
+              <Helmet>
+                <title>{product.name} </title>
+              </Helmet>
               <h1>{product.name}</h1>
             </ListGroup.Item>
             <ListGroup.Item>

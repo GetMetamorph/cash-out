@@ -11,7 +11,8 @@ const data = {
       brand: 'Nike',
       rating: 4.5,
       numReviews: 10,
-      description: 'high quality shirt',
+      description:
+        'high quality shirt Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam magna mauris, lobortis non pellentesque nec, finibus et neque. Pellentesque molestie non sem non posuere. Aliquam dapibus dui placerat mauris molestie auctor. Quisque nec erat non metus iaculis pulvinar. Vestibulum at orci ligula. Phasellus at aliquam tellus. Suspendisse sit amet nulla lectus. Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     },
     {
       id: '2',
@@ -20,11 +21,12 @@ const data = {
       category: 'Shirts',
       image: '/images/p2.jpg',
       price: 250,
-      countInStock: 20,
+      countInStock: 0,
       brand: 'Adidas',
       rating: 4.0,
       numReviews: 10,
-      description: 'high quality product',
+      description:
+        'high quality product Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam magna mauris, lobortis non pellentesque nec, finibus et neque. Pellentesque molestie non sem non posuere. Aliquam dapibus dui placerat mauris molestie auctor. Quisque nec erat non metus iaculis pulvinar. Vestibulum at orci ligula. Phasellus at aliquam tellus. Suspendisse sit amet nulla lectus. Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     },
     {
       id: '3',
@@ -37,7 +39,8 @@ const data = {
       brand: 'Nike',
       rating: 4.5,
       numReviews: 14,
-      description: 'high quality product',
+      description:
+        'high quality product Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam magna mauris, lobortis non pellentesque nec, finibus et neque. Pellentesque molestie non sem non posuere. Aliquam dapibus dui placerat mauris molestie auctor. Quisque nec erat non metus iaculis pulvinar. Vestibulum at orci ligula. Phasellus at aliquam tellus. Suspendisse sit amet nulla lectus. Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     },
     {
       id: '4',
@@ -50,7 +53,8 @@ const data = {
       brand: 'Puma',
       rating: 4.5,
       numReviews: 10,
-      description: 'high quality product',
+      description:
+        'high quality product Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam magna mauris, lobortis non pellentesque nec, finibus et neque. Pellentesque molestie non sem non posuere. Aliquam dapibus dui placerat mauris molestie auctor. Quisque nec erat non metus iaculis pulvinar. Vestibulum at orci ligula. Phasellus at aliquam tellus. Suspendisse sit amet nulla lectus. Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     },
   ],
 };
