@@ -4,8 +4,15 @@ import ProductScreen from './screens/ProductScreen';
 import { LinkContainer } from 'react-router-bootstrap';
 import Navbar from 'react-bootstrap/Navbar';
 import Container from 'react-bootstrap/Container';
+import { Link } from 'react-router-dom';
+import { Badge, Nav } from 'react-bootstrap';
+import { useContext } from 'react';
+import { Store } from './Store';
 
 function App() {
+  const { state } = useContext(Store);
+  const { cart } = state;
+
   return (
     <BrowserRouter>
       <div className="d-flex flex-column site-container">
@@ -17,6 +24,21 @@ function App() {
                   Cash-out!
                 </Navbar.Brand>
               </LinkContainer>
+
+              <Nav className="me-auto">
+                <Link to="/cart" className="nav-link">
+                  <Navbar.Text> Panier</Navbar.Text>
+                  {
+                    //Affiche dans la navbar le nombre des items dans le panier
+                    //si il y en a au moins un Cart
+                    cart.cartItems.length > 0 && (
+                      <Badge pill bg="danger">
+                        {cart.cartItems.length}
+                      </Badge>
+                    )
+                  }
+                </Link>
+              </Nav>
             </Container>
           </Navbar>
         </header>
