@@ -72,3 +72,7 @@ a.navbar-brand:focus {
   font-size: large;
   color: white;
 }
+
+.img-thumbnail {
+  height: 80px;
+}
