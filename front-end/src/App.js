@@ -33,7 +33,11 @@ function App() {
                     //si il y en a au moins un Cart
                     cart.cartItems.length > 0 && (
                       <Badge pill bg="danger">
-                        {cart.cartItems.length}
+                        {cart.cartItems.reduce(
+                          (accumulator, currentItem) =>
+                            accumulator + currentItem.quantity,
+                          0
+                        )}
                       </Badge>
                     )
                   }
