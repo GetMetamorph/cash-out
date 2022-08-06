@@ -1,4 +1,26 @@
+import bcrypt from 'bcryptjs';
+
 const data = {
+  users: [
+    {
+      firstname: 'Driss',
+      lastname: 'Kanouni',
+      email: 'canon78500@hotmail.fr',
+      password: bcrypt.hashSync('admin'),
+      adminPrivilege: true,
+      address: '21 Rue des Abysses, 78500, Sartrouville',
+      phoneNumber: '0638918383',
+    },
+    {
+      firstname: 'Zicco',
+      lastname: 'McBernick',
+      email: 'ziccoBiscotto@hotmail.fr',
+      password: bcrypt.hashSync('123456'),
+      adminPrivilege: false,
+      address: '21 Rue des Abysses, 72000, Bourges',
+      phoneNumber: '0638918384',
+    },
+  ],
   products: [
     {
       name: 'Nike Slim shirt',
