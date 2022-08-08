@@ -1,13 +1,35 @@
 import { Button, Container, Form } from 'react-bootstrap';
 import { Helmet } from 'react-helmet-async';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import Axios from 'axios';
+import { useContext, useState } from 'react';
+import { Store } from '../Store';
 
 export default function SigninScreen() {
   const { search } = useLocation();
+  const navigate = useNavigate();
   const redirectInUrl = new URLSearchParams(search).get('redirect');
   //Vérifie si le redirect est dans l'url, si oui appliquer le redirect sinon retour a la home page
   const redirect = redirectInUrl ? redirectInUrl : '/';
 
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const { state, dispatch: ctxDispatch } = useContext(Store);
+  const submitHandler = async (event) => {
+    event.preventDefault();
+    try {
+      const { data } = await Axios.post('/api/users/signin', {
+        email,
+        password,
+      });
+      ctxDispatch({ type: 'USER_SIGNIN', payload: data });
+      localStorage.setItem('userInfo', JSON.stringify(data));
+      navigate(redirect || '/');
+    } catch (error) {
+      alert('Addresse mail ou mot de passe invalide');
+    }
+  };
   return (
     <Container className="small-container">
       <Helmet>
@@ -15,14 +37,22 @@ export default function SigninScreen() {
       </Helmet>
       <h1 className="my-3">Connexion</h1>
 
-      <Form>
+      <Form onSubmit={submitHandler}>
         <Form.Group className="mb-3" controlId="email">
           <Form.Label> Email </Form.Label>
-          <Form.Control type="email" required />
+          <Form.Control
+            type="email"
+            required
+            onChange={(event) => setEmail(event.target.value)}
+          />
         </Form.Group>
         <Form.Group className="mb-3" controlId="password">
           <Form.Label> Mot de passe </Form.Label>
-          <Form.Control type="password" required />
+          <Form.Control
+            type="password"
+            required
+            onChange={(event) => setPassword(event.target.value)}
+          />
         </Form.Group>
         <div className="mb-3">
           <Button type="submit">Se connecter</Button>
