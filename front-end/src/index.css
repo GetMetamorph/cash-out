@@ -101,7 +101,9 @@ a.navbar-brand:focus {
   color: #f08000;
 }
 
-.button-delivery {
+.button-form {
   margin-top: 1rem;
   width: 100%;
+  background-color: rgb(95, 22, 125);
+  border-color: rgb(95, 22, 125);
 }
