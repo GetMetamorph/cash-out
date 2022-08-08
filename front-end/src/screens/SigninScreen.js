@@ -29,7 +29,7 @@ export default function SigninScreen() {
       localStorage.setItem('userInfo', JSON.stringify(data));
       navigate(redirect || '/');
     } catch (error) {
-      //getError come from utils
+      //getError come from utils and show a pop up
       toast.error(getError(error));
     }
   };
