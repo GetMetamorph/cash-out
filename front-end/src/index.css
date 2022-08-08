@@ -53,6 +53,7 @@ main {
 
 .app-navbar {
   background-color: rgb(95, 22, 125);
+  color: white;
 }
 
 a.navbar-brand {
@@ -67,7 +68,16 @@ a.navbar-brand:focus {
   text-decoration: none;
 }
 
-.navbar-text {
+.nav-link {
+  color: #ffff;
+}
+
+#basic-nav-dropdown {
+  color: #ffff;
+}
+
+.navbar-text,
+.navbar {
   font-family: 'Verdana', 'Courier New', Courier, monospace;
   font-size: large;
   color: white;

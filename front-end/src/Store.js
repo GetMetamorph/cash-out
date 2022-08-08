@@ -3,6 +3,11 @@ import { createContext, useReducer } from 'react';
 export const Store = createContext();
 
 const initialState = {
+  // Check local storage to retrieve user informations, if there is, then retrieve is thanks to json parse, otherwise set it to null to logout
+  userInfo: localStorage.getItem('userInfo')
+    ? JSON.parse(localStorage.getItem('userInfo'))
+    : null,
+
   cart: {
     //Check local storage to retrieve items, otherwise set no item in shopping cart
     cartItems: localStorage.getItem('cartItems')
@@ -39,6 +44,11 @@ function reducer(state, action) {
     case 'USER_SIGNIN': {
       return { ...state, userInfo: action.payload };
     }
+
+    case 'USER_SIGNOUT': {
+      return { ...state, userInfo: null };
+    }
+
     default:
       return state;
   }
