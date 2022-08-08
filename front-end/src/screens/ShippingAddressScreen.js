@@ -65,7 +65,7 @@ export default function ShippingAddressScreen() {
               <Col className="mb-1">
                 <Form.Label>Nom</Form.Label>
                 <Form.Control
-                  value={userInfo.lastname}
+                  value={fullName}
                   onChange={(e) => setFullName(e.target.value)}
                   required
                 />
@@ -73,7 +73,7 @@ export default function ShippingAddressScreen() {
               <Col>
                 <Form.Label>Prénom</Form.Label>
                 <Form.Control
-                  value={userInfo.firstname}
+                  value={fullName}
                   onChange={(e) => setFullName(e.target.value)}
                   required
                 />
