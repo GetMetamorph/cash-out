@@ -13,7 +13,6 @@ root.render(
   <React.StrictMode>
     <StoreProvider>
       <HelmetProvider>
-        <App />
         <PayPalScriptProvider deferLoading={true}>
           <App />
         </PayPalScriptProvider>
