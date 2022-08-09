@@ -166,7 +166,9 @@ export default function OrderScreen() {
                 <strong>Moyen de paiement :</strong> {order.paymentMethod}
               </Card.Text>
               {order.isPaid ? (
-                <MessageBox variant="success">Payé à {order.paidAt}</MessageBox>
+                <MessageBox variant="success">
+                  Payé le {order.paidAt}
+                </MessageBox>
               ) : (
                 <MessageBox variant="danger">Non payé</MessageBox>
               )}
