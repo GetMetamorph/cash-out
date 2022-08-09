@@ -32,6 +32,10 @@ app.use('/api/orders', orderRouter);
 
 app.use('/api/users', userRouter);
 
+app.get('/api/keys/paypal', (req, res) => {
+  res.send(process.env.PAYPAL_CLIENT_ID || 'sb');
+});
+
 //Gére les erreurs, fonctionne comme un middelware
 app.use((err, req, res, next) => {
   res.status(500).send({ message: err.message });
