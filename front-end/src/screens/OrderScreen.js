@@ -136,9 +136,9 @@ export default function OrderScreen() {
   ) : (
     <div>
       <Helmet>
-        <title>Commande {orderId}</title>
+        <title>Commande n°{orderId}</title>
       </Helmet>
-      <h1 className="my-3">Commande {orderId}</h1>
+      <h1 className="my-3">Commande n°{orderId}</h1>
       <Row>
         <Col md={8}>
           <Card className="mb-3">
