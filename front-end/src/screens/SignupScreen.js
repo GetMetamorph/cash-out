@@ -28,7 +28,7 @@ export default function SignupScreen() {
   const submitHandler = async (e) => {
     e.preventDefault();
     if (password !== confirmPassword) {
-      toast.error('Passwords do not match');
+      toast.error('Les mots de passe ne sont pas identique');
       return;
     }
     try {

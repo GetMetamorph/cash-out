@@ -59,7 +59,8 @@ userRouter.put(
   expressAsyncHandler(async (req, res) => {
     const user = await User.findById(req.user._id);
     if (user) {
-      user.name = req.body.name || user.name;
+      user.firstname = req.body.firstname || user.firstname;
+      user.lastname = req.body.lastname || user.lastname;
       user.email = req.body.email || user.email;
       if (req.body.password) {
         user.password = bcrypt.hashSync(req.body.password, 8);
@@ -68,7 +69,8 @@ userRouter.put(
       const updatedUser = await user.save();
       res.send({
         _id: updatedUser._id,
-        name: updatedUser.name,
+        firstname: updatedUser.firstname,
+        lastname: updatedUser.lastname,
         email: updatedUser.email,
         isAdmin: updatedUser.isAdmin,
         token: generateToken(updatedUser),
