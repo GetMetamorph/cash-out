@@ -15,6 +15,7 @@ import ShippingAddressScreen from './screens/ShippingAddressScreen';
 import PaymentMethodScreen from './screens/PaymentMethodScreen';
 import PlaceOrderScreen from './screens/PlaceOrderScreen';
 import SigninScreen from './screens/SigninScreen';
+import OrderHistoryScreen from './screens/OrderHistoryScreen';
 import OrderScreen from './screens/OrderScreen';
 import SignupScreen from './screens/SignupScreen';
 
@@ -34,57 +35,59 @@ function App() {
       <div className="d-flex flex-column site-container">
         <ToastContainer position="bottom-center" limit={1} />
         <header>
-          <Navbar className="app-navbar">
+          <Navbar className="app-navbar" expand="lg">
             <Container>
               <LinkContainer to="/">
                 <Navbar.Brand className="font-effect-anaglyph">
                   Cash-out!
                 </Navbar.Brand>
               </LinkContainer>
-
-              <Nav className="me-auto">
-                <Link to="/cart" className="nav-link">
-                  <Navbar.Text> Panier</Navbar.Text>
-                  {
-                    //Affiche dans la navbar le nombre des items dans le panier
-                    //si il y en a au moins un Cart
-                    cart.cartItems.length > 0 && (
-                      <Badge pill bg="danger">
-                        {cart.cartItems.reduce(
-                          (accumulator, currentItem) =>
-                            accumulator + currentItem.quantity,
-                          0
-                        )}
-                      </Badge>
-                    )
-                  }
-                </Link>
-                {userInfo ? (
-                  <NavDropdown
-                    title={userInfo.firstname}
-                    id="basic-nav-dropdown"
-                  >
-                    <LinkContainer to="/profile">
-                      <NavDropdown.Item>Profil</NavDropdown.Item>
-                    </LinkContainer>
-                    <LinkContainer to="/orderhistory">
-                      <NavDropdown.Item>Commandes passées</NavDropdown.Item>
-                    </LinkContainer>
-                    <NavDropdown.Divider />
-                    <Link
-                      className="dropdown-item"
-                      to="#signout"
-                      onClick={signoutHandler}
-                    >
-                      Deconnexion
-                    </Link>
-                  </NavDropdown>
-                ) : (
-                  <Link className="nav-link" to="/signin">
-                    Se connecter
+              <Navbar.Toggle aria-controls="basic-navbar-nav" />
+              <Navbar.Collapse id="basic-navbar-nav">
+                <Nav className="me-auto w-100 justify-content-end">
+                  <Link to="/cart" className="nav-link">
+                    <Navbar.Text> Panier</Navbar.Text>
+                    {
+                      //Affiche dans la navbar le nombre des items dans le panier
+                      //si il y en a au moins un Cart
+                      cart.cartItems.length > 0 && (
+                        <Badge pill bg="danger">
+                          {cart.cartItems.reduce(
+                            (accumulator, currentItem) =>
+                              accumulator + currentItem.quantity,
+                            0
+                          )}
+                        </Badge>
+                      )
+                    }
                   </Link>
-                )}
-              </Nav>
+                  {userInfo ? (
+                    <NavDropdown
+                      title={userInfo.firstname}
+                      id="basic-nav-dropdown"
+                    >
+                      <LinkContainer to="/profile">
+                        <NavDropdown.Item>Profil</NavDropdown.Item>
+                      </LinkContainer>
+                      <LinkContainer to="/orderhistory">
+                        <NavDropdown.Item>Commandes passées</NavDropdown.Item>
+                      </LinkContainer>
+                      <NavDropdown.Divider />
+                      <Link
+                        className="dropdown-item"
+                        to="#signout"
+                        onClick={signoutHandler}
+                      >
+                        Deconnexion
+                      </Link>
+                    </NavDropdown>
+                  ) : (
+                    <Link className="nav-link" to="/signin">
+                      Se connecter
+                    </Link>
+                  )}
+                </Nav>
+              </Navbar.Collapse>
             </Container>
           </Navbar>
         </header>
@@ -99,7 +102,8 @@ function App() {
               <Route path="/payment" element={<PaymentMethodScreen />} />
               <Route path="/signup" element={<SignupScreen />} />
               <Route path="/placeorder" element={<PlaceOrderScreen />} />
-              <Route path="/order/:id" element={<OrderScreen />}></Route>
+              <Route path="/order/:id" element={<OrderScreen />} />
+              <Route path="/orderhistory" element={<OrderHistoryScreen />} />
             </Routes>
           </Container>
         </main>
