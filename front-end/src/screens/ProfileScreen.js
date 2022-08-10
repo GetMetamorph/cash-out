@@ -37,8 +37,11 @@ export default function ProfileScreen() {
   const [editProfile, setEditProfile] = useState(false);
 
   const submitHandler = async (e) => {
-    console.log('submited');
     e.preventDefault();
+    if (password !== confirmPassword) {
+      toast.error('Les mots de passe ne sont pas identique');
+      return;
+    }
     try {
       console.log('TRY ok');
       const { data } = await axios.put(
@@ -107,14 +110,14 @@ export default function ProfileScreen() {
         {editProfile ? (
           <>
             <Form.Group className="mb-3" controlId="password">
-              <Form.Label>Mot de passe</Form.Label>
+              <Form.Label>Nouveau mot de passe</Form.Label>
               <Form.Control
                 type="password"
                 onChange={(e) => setPassword(e.target.value)}
               />
             </Form.Group>
-            <Form.Group className="mb-3" controlId="password">
-              <Form.Label>Confirmer le mot de passe</Form.Label>
+            <Form.Group className="mb-3" controlId="confirmPassword">
+              <Form.Label>Confirmer le nouveau mot de passe</Form.Label>
               <Form.Control
                 type="password"
                 onChange={(e) => setConfirmPassword(e.target.value)}
