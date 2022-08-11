@@ -68,6 +68,10 @@ a.navbar-brand:focus {
   text-decoration: none;
 }
 
+#side-link {
+  color: black;
+}
+
 .nav-link {
   color: #ffff;
 }
@@ -106,4 +110,36 @@ a.navbar-brand:focus {
   width: 100%;
   background-color: rgb(95, 22, 125);
   border-color: rgb(95, 22, 125);
+}
+
+/* sidebar */
+.navbar-brand {
+  font-weight: bold;
+}
+.side-navbar {
+  width: 240px;
+  height: 100%;
+  position: absolute;
+  left: -300px;
+  background-color: #100901;
+  transition: 0.5s;
+}
+
+.site-container {
+  transition: 0.4s;
+}
+.active-cont {
+  margin-left: 240px;
+}
+.active-nav {
+  left: 0;
+}
+
+.adjust-button {
+  margin-right: 20px;
+}
+
+.side-navbar {
+  background-color: rgb(230, 224, 242);
+  color: black;
 }

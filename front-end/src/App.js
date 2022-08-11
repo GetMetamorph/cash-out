@@ -65,6 +65,7 @@ function App() {
             <Container>
               <Button
                 variant="dark"
+                className="adjust-button"
                 onClick={() => setSidebarIsOpen(!sidebarIsOpen)}
               >
                 <i className="fas fa-bars"></i>
@@ -132,7 +133,7 @@ function App() {
               : 'side-navbar d-flex justify-content-between flex-wrap flex-column'
           }
         >
-          <Nav className="flex-column text-white w-100 p-2">
+          <Nav className="flex-column text-black w-100 p-2">
             <Nav.Item>
               <strong>Catégories</strong>
             </Nav.Item>
@@ -142,7 +143,7 @@ function App() {
                   to={`/search?category=${category}`}
                   onClick={() => setSidebarIsOpen(false)}
                 >
-                  <Nav.Link>{category}</Nav.Link>
+                  <Nav.Link id="side-link">{category}</Nav.Link>
                 </LinkContainer>
               </Nav.Item>
             ))}
