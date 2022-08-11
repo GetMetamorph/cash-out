@@ -143,3 +143,7 @@ a.navbar-brand:focus {
   background-color: rgb(230, 224, 242);
   color: black;
 }
+
+.text-bold {
+  font-weight: bold;
+}
