@@ -1,4 +1,17 @@
 import bcrypt from 'bcryptjs';
+const mockedDatasRepeated = {
+  name: 'Adidas Fit Shirt',
+  slug: 'adidas-fit-shirt',
+  category: 'Shirts',
+  image: '/images/p2.jpg',
+  price: 250,
+  countInStock: 0,
+  brand: 'Adidas',
+  rating: 4.0,
+  numReviews: 10,
+  description:
+    'high quality product Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam magna mauris, lobortis non pellentesque nec, finibus et neque. Pellentesque molestie non sem non posuere. Aliquam dapibus dui placerat mauris molestie auctor. Quisque nec erat non metus iaculis pulvinar. Vestibulum at orci ligula. Phasellus at aliquam tellus. Suspendisse sit amet nulla lectus. Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+}
 
 const data = {
   users: [
@@ -19,7 +32,7 @@ const data = {
       adminPrivilege: false,
       address: '21 Rue des Abysses, 72000, Bourges',
       phoneNumber: '0638918384',
-    },
+    }
   ],
   products: [
     {
@@ -74,6 +87,20 @@ const data = {
       description:
         'high quality product Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam magna mauris, lobortis non pellentesque nec, finibus et neque. Pellentesque molestie non sem non posuere. Aliquam dapibus dui placerat mauris molestie auctor. Quisque nec erat non metus iaculis pulvinar. Vestibulum at orci ligula. Phasellus at aliquam tellus. Suspendisse sit amet nulla lectus. Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     },
+    mockedDatasRepeated,
+    mockedDatasRepeated,
+    mockedDatasRepeated,
+    mockedDatasRepeated, 
+    mockedDatasRepeated,
+    mockedDatasRepeated,
+    mockedDatasRepeated,
+    mockedDatasRepeated,
+    mockedDatasRepeated,
+    mockedDatasRepeated,
+    mockedDatasRepeated,
+    mockedDatasRepeated,
+    mockedDatasRepeated,
+    mockedDatasRepeated
   ],
 };
 export default data;

@@ -46,6 +46,7 @@
     ]
   },
   "devDependencies": {
+    "react-bootstrap-icons": "^1.8.4",
     "use-reducer-logger": "^1.0.2"
   }
 }

@@ -6,6 +6,7 @@ import seedRouter from './routes/seedRoutes.js';
 import productRouter from './routes/productRoutes.js';
 import userRouter from './routes/userRoutes.js';
 import orderRouter from './routes/orderRoutes.js';
+import cors from 'cors';
 
 dotenv.config();
 
@@ -23,6 +24,7 @@ const app = express();
 //sert à convertir les données dans la post request en objet json
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(cors({ origin: "*"}));
 
 app.use('/api/seed', seedRouter);
 
@@ -38,7 +40,8 @@ app.get('/api/keys/paypal', (req, res) => {
 
 //Gére les erreurs, fonctionne comme un middelware
 app.use((err, req, res, next) => {
-  res.status(500).send({ message: err.message });
+  err.status = err.status || 500;
+  res.status(err.status).send({ message: err.message });
 });
 
 const port = process.env.PORT || 5000;

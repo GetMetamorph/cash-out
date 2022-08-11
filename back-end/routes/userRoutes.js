@@ -9,10 +9,13 @@ const userRouter = express.Router();
 userRouter.post(
   '/signin',
   expressAsyncHandler(async (req, res) => {
-    const user = await User.findOne({ email: req.body.email });
-    if (user) {
+    const user = await User.findOne({ email: req.body.email })
+    console.log(user)
+    if(user){
+      console.log('you know')
       if (bcrypt.compareSync(req.body.password, user.password)) {
-        res.send({
+        console.log('connected')
+        res.status(200).send({
           _id: user._id,
           firstname: user.firstname,
           lastname: user.lastname,
@@ -20,7 +23,7 @@ userRouter.post(
           adminPrivilege: user.adminPrivilege,
           address: user.address,
           phoneNumber: user.phoneNumber,
-          token: generateToken(user),
+          token: generateToken(user)
         });
         return;
       }

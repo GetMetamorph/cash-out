@@ -19,6 +19,10 @@ import SigninScreen from './screens/SigninScreen';
 import OrderHistoryScreen from './screens/OrderHistoryScreen';
 import OrderScreen from './screens/OrderScreen';
 import SignupScreen from './screens/SignupScreen';
+import PanelAdminScreen from './screens/PanelAdminScreen';
+
+import { Cart } from 'react-bootstrap-icons'
+import { useRouteMatch } from 'react-router-dom';
 
 function App() {
   const { state, dispatch: ctxDispatch } = useContext(Store);
@@ -34,10 +38,9 @@ function App() {
 
   return (
     <BrowserRouter>
-      <div className="d-flex flex-column site-container">
+      <div className="d-flex flex-column site-container h-100">
         <ToastContainer position="bottom-center" limit={1} />
-        <header>
-          <Navbar className="app-navbar" expand="lg">
+          <Navbar className="app-navbar" expand="lg" sticky="top">
             <Container>
               <LinkContainer to="/">
                 <Navbar.Brand className="font-effect-anaglyph">
@@ -48,7 +51,7 @@ function App() {
               <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="me-auto w-100 justify-content-end">
                   <Link to="/cart" className="nav-link">
-                    <Navbar.Text> Panier</Navbar.Text>
+                    <Navbar.Text><Cart size={25} /></Navbar.Text>
                     {
                       //Affiche dans la navbar le nombre des items dans le panier
                       //si il y en a au moins un Cart
@@ -64,17 +67,18 @@ function App() {
                     }
                   </Link>
                   {userInfo ? (
-                    <NavDropdown
-                      title={userInfo.firstname}
-                      id="basic-nav-dropdown"
-                    >
+                    <>
                       <LinkContainer to="/profile">
-                        <NavDropdown.Item>Profil</NavDropdown.Item>
+                        <Nav.Item>Profile</Nav.Item>
                       </LinkContainer>
+                      {userInfo.adminPrivilege && (
+                        <LinkContainer to="/panel-admin">
+                         <Nav.Item>Panel Admin</Nav.Item>
+                        </LinkContainer>  
+                      )}
                       <LinkContainer to="/orderhistory">
-                        <NavDropdown.Item>Commandes passées</NavDropdown.Item>
+                        <Nav.Item>Commandes passées</Nav.Item>
                       </LinkContainer>
-                      <NavDropdown.Divider />
                       <Link
                         className="dropdown-item"
                         to="#signout"
@@ -82,7 +86,7 @@ function App() {
                       >
                         Deconnexion
                       </Link>
-                    </NavDropdown>
+                      </>
                   ) : (
                     <Link className="nav-link" to="/signin">
                       Se connecter
@@ -92,11 +96,11 @@ function App() {
               </Navbar.Collapse>
             </Container>
           </Navbar>
-        </header>
         <main>
           <Container className="mt-3">
             <Routes>
               <Route path="/" element={<HomeScreen />} />
+              <Route path="/panel-admin" element={<PanelAdminScreen />} />
               <Route path="/product/:slug" element={<ProductScreen />} />
               <Route path="/cart/" element={<CartScreen />} />
               <Route path="/signin/" element={<SigninScreen />} />
