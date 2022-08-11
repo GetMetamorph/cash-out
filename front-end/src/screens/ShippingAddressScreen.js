@@ -14,7 +14,8 @@ export default function ShippingAddressScreen() {
     userInfo,
     cart: { shippingAddress },
   } = state;
-  const [fullName, setFullName] = useState(shippingAddress.fullName || '');
+  const [firstName, setFirstName] = useState(shippingAddress.firstName || '');
+  const [lastName, setLastName] = useState(shippingAddress.lastName || '');
   const [address, setAddress] = useState(shippingAddress.address || '');
   const [city, setCity] = useState(shippingAddress.city || '');
   const [postalCode, setPostalCode] = useState(
@@ -28,6 +29,7 @@ export default function ShippingAddressScreen() {
   const [country, setCountry] = useState(shippingAddress.country || '');
   const submitHandler = (e) => {
     e.preventDefault();
+    const fullName = `${firstName} ${lastName}`
     ctxDispatch({
       type: 'SAVE_SHIPPING_ADDRESS',
       payload: {
@@ -65,16 +67,16 @@ export default function ShippingAddressScreen() {
               <Col className="mb-1">
                 <Form.Label>Nom</Form.Label>
                 <Form.Control
-                  value={fullName}
-                  onChange={(e) => setFullName(e.target.value)}
+                  value={firstName}
+                  onChange={(e) => setFirstName(e.target.value)}
                   required
                 />
               </Col>
               <Col>
                 <Form.Label>Prénom</Form.Label>
                 <Form.Control
-                  value={fullName}
-                  onChange={(e) => setFullName(e.target.value)}
+                  value={lastName}
+                  onChange={(e) => setLastName(e.target.value)}
                   required
                 />
               </Col>
