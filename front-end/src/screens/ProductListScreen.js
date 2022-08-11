@@ -25,10 +25,7 @@ const reducer = (state, action) => {
     case 'CREATE_REQUEST':
       return { ...state, loadingCreate: true };
     case 'CREATE_SUCCESS':
-      return {
-        ...state,
-        loadingCreate: false,
-      };
+      return { ...state, loadingCreate: false };
     case 'CREATE_FAIL':
       return { ...state, loadingCreate: false };
     default:
