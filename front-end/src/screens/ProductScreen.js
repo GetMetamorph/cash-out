@@ -11,7 +11,7 @@ import {
 } from 'react-bootstrap';
 import { useNavigate, useParams } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import logger from 'use-reducer-logger';
+//import logger from 'use-reducer-logger';
 import Rating from '../components/Rating';
 import LoadingBox from '../components/LoadingBox';
 import MessageBox from '../components/MessageBox';
@@ -36,7 +36,8 @@ function ProductScreen() {
   const navigate = useNavigate();
   const params = useParams();
   const { slug } = params;
-  const [{ loading, error, product }, dispatch] = useReducer(logger(reducer), {
+  const [{ loading, error, product }, dispatch] = useReducer(reducer, {
+    //logger(reducer), {
     loading: true,
     product: [],
     error: '',
