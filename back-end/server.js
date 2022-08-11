@@ -1,5 +1,5 @@
 import express from 'express';
-import data from './data.js';
+import path from 'path';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import seedRouter from './routes/seedRoutes.js';
@@ -31,6 +31,12 @@ app.use('/api/products', productRouter);
 app.use('/api/orders', orderRouter);
 
 app.use('/api/users', userRouter);
+
+const __dirname = path.resolve();
+app.use(express.static(path.join(__dirname, '/front-end/build')));
+app.get('*', (req, res) =>
+  res.sendFile(path.join(__dirname, '/front-end/build/index.html'))
+);
 
 app.get('/api/keys/paypal', (req, res) => {
   res.send(process.env.PAYPAL_CLIENT_ID || 'sb');
