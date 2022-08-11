@@ -24,6 +24,9 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+app.get('/api/keys/paypal', (req, res) => {
+  res.send(process.env.PAYPAL_CLIENT_ID || 'sb');
+});
 app.use('/api/seed', seedRouter);
 
 app.use('/api/products', productRouter);
@@ -37,10 +40,6 @@ app.use(express.static(path.join(__dirname, '/front-end/build')));
 app.get('*', (req, res) =>
   res.sendFile(path.join(__dirname, '/front-end/build/index.html'))
 );
-
-app.get('/api/keys/paypal', (req, res) => {
-  res.send(process.env.PAYPAL_CLIENT_ID || 'sb');
-});
 
 //Gére les erreurs, fonctionne comme un middelware
 app.use((err, req, res, next) => {
