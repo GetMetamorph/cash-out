@@ -64,7 +64,7 @@ export default function ProductListScreen() {
     fetchData();
   }, [page, userInfo]);
   const createHandler = async () => {
-    if (window.confirm('Are you sure to create?')) {
+    if (window.confirm('Créer un article ?')) {
       try {
         dispatch({ type: 'CREATE_REQUEST' });
         const { data } = await axios.post(
@@ -74,7 +74,7 @@ export default function ProductListScreen() {
             headers: { Authorization: `Bearer ${userInfo.token}` },
           }
         );
-        toast.success('product created successfully');
+        toast.success('produit créer avec succès');
         dispatch({ type: 'CREATE_SUCCESS' });
         navigate(`/admin/product/${data.product._id}`);
       } catch (err) {
