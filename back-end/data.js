@@ -225,7 +225,7 @@ const data = {
       name: 'Adidas Green socket',
       slug: 'Adidas-green-socket',
       category: 'Socket',
-      image: '/images/p13.jpg',
+      image: '/images/p16.jpg',
       price: 13,
       countInStock: 15,
       brand: 'Adidas',
