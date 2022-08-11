@@ -36,37 +36,37 @@ const reducer = (state, action) => {
 
 const prices = [
   {
-    name: '$1 to $50',
+    name: 'Moins de 50€',
     value: '1-50',
   },
   {
-    name: '$51 to $200',
+    name: 'Entre 50 et 200€',
     value: '51-200',
   },
   {
-    name: '$201 to $1000',
+    name: 'Entre 200 et 1000€',
     value: '201-1000',
   },
 ];
 
 export const ratings = [
   {
-    name: '4stars & up',
+    name: 'Plus de 4 étoiles',
     rating: 4,
   },
 
   {
-    name: '3stars & up',
+    name: 'Plus de 3 étoiles',
     rating: 3,
   },
 
   {
-    name: '2stars & up',
+    name: 'Plus de 2 étoiles',
     rating: 2,
   },
 
   {
-    name: '1stars & up',
+    name: 'Plus de 1 étoile',
     rating: 1,
   },
 ];
@@ -130,11 +130,11 @@ export default function SearchScreen() {
   return (
     <div>
       <Helmet>
-        <title>Search Products</title>
+        <title>Rechercher produit</title>
       </Helmet>
       <Row>
         <Col md={3}>
-          <h3>Department</h3>
+          <h3>Catégorie</h3>
           <div>
             <ul>
               <li>
@@ -142,7 +142,7 @@ export default function SearchScreen() {
                   className={'all' === category ? 'text-bold' : ''}
                   to={getFilterUrl({ category: 'all' })}
                 >
-                  Any
+                  Tout
                 </Link>
               </li>
               {categories.map((c) => (
@@ -158,14 +158,14 @@ export default function SearchScreen() {
             </ul>
           </div>
           <div>
-            <h3>Price</h3>
+            <h3>Prix</h3>
             <ul>
               <li>
                 <Link
                   className={'all' === price ? 'text-bold' : ''}
                   to={getFilterUrl({ price: 'all' })}
                 >
-                  Any
+                  Tout
                 </Link>
               </li>
               {prices.map((p) => (
@@ -181,7 +181,7 @@ export default function SearchScreen() {
             </ul>
           </div>
           <div>
-            <h3>Avg. Customer Review</h3>
+            <h3>Notes</h3>
             <ul>
               {ratings.map((r) => (
                 <li key={r.name}>
@@ -189,7 +189,7 @@ export default function SearchScreen() {
                     to={getFilterUrl({ rating: r.rating })}
                     className={`${r.rating}` === `${rating}` ? 'text-bold' : ''}
                   >
-                    <Rating caption={' & up'} rating={r.rating}></Rating>
+                    <Rating caption={' '} rating={r.rating}></Rating>
                   </Link>
                 </li>
               ))}
@@ -198,7 +198,7 @@ export default function SearchScreen() {
                   to={getFilterUrl({ rating: 'all' })}
                   className={rating === 'all' ? 'text-bold' : ''}
                 >
-                  <Rating caption={' & up'} rating={0}></Rating>
+                  <Rating caption={' '} rating={0}></Rating>
                 </Link>
               </li>
             </ul>
@@ -233,22 +233,22 @@ export default function SearchScreen() {
                   </div>
                 </Col>
                 <Col className="text-end">
-                  Sort by{' '}
+                  Trié par{' '}
                   <select
                     value={order}
                     onChange={(e) => {
                       navigate(getFilterUrl({ order: e.target.value }));
                     }}
                   >
-                    <option value="newest">Newest Arrivals</option>
-                    <option value="lowest">Price: Low to High</option>
-                    <option value="highest">Price: High to Low</option>
-                    <option value="toprated">Avg. Customer Reviews</option>
+                    <option value="newest">Nouveautés</option>
+                    <option value="lowest">Prix ascendant</option>
+                    <option value="highest">Prix: descendeant</option>
+                    <option value="toprated">Mieux notés</option>
                   </select>
                 </Col>
               </Row>
               {products.length === 0 && (
-                <MessageBox>No Product Found</MessageBox>
+                <MessageBox>Aucun produit trouvé</MessageBox>
               )}
 
               <Row>
