@@ -48,7 +48,7 @@ function App() {
               <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="me-auto w-100 justify-content-end">
                   <Link to="/cart" className="nav-link">
-                    <Navbar.Text> Panier</Navbar.Text>
+                    <Navbar.Text>Panier</Navbar.Text>
                     {
                       //Affiche dans la navbar le nombre des items dans le panier
                       //si il y en a au moins un Cart
