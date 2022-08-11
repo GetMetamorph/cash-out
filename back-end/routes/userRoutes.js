@@ -72,7 +72,7 @@ userRouter.put(
         firstname: updatedUser.firstname,
         lastname: updatedUser.lastname,
         email: updatedUser.email,
-        isAdmin: updatedUser.isAdmin,
+        adminPrivilege: updatedUser.adminPrivilege,
         token: generateToken(updatedUser),
       });
     } else {

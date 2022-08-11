@@ -23,8 +23,8 @@ const data = {
   ],
   products: [
     {
-      name: 'Nike Slim shirt',
-      slug: 'nike-slim-shirt',
+      name: 'Nike Slim maillot',
+      slug: 'nike-slim-maillot',
       category: 'Maillot',
       image: '/images/p1.jpg',
       price: 120,
@@ -33,11 +33,11 @@ const data = {
       rating: 4.5,
       numReviews: 10,
       description:
-        'high quality shirt Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam magna mauris, lobortis non pellentesque nec, finibus et neque. Pellentesque molestie non sem non posuere. Aliquam dapibus dui placerat mauris molestie auctor. Quisque nec erat non metus iaculis pulvinar. Vestibulum at orci ligula. Phasellus at aliquam tellus. Suspendisse sit amet nulla lectus. Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+        'high quality maillot Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam magna mauris, lobortis non pellentesque nec, finibus et neque. Pellentesque molestie non sem non posuere. Aliquam dapibus dui placerat mauris molestie auctor. Quisque nec erat non metus iaculis pulvinar. Vestibulum at orci ligula. Phasellus at aliquam tellus. Suspendisse sit amet nulla lectus. Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     },
     {
-      name: 'Adidas Fit Shirt',
-      slug: 'adidas-fit-shirt',
+      name: 'Adidas Fit maillot',
+      slug: 'adidas-fit-maillot',
       category: 'Maillot',
       image: '/images/p2.jpg',
       price: 250,
@@ -49,8 +49,8 @@ const data = {
         'high quality product Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam magna mauris, lobortis non pellentesque nec, finibus et neque. Pellentesque molestie non sem non posuere. Aliquam dapibus dui placerat mauris molestie auctor. Quisque nec erat non metus iaculis pulvinar. Vestibulum at orci ligula. Phasellus at aliquam tellus. Suspendisse sit amet nulla lectus. Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     },
     {
-      name: 'Nike Slim Pant',
-      slug: 'nike-slim-pant',
+      name: 'Nike Slim pantalon',
+      slug: 'nike-slim-pantalon',
       category: 'Pantalon',
       image: '/images/p3.jpg',
       price: 25,
@@ -62,8 +62,8 @@ const data = {
         'high quality product Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam magna mauris, lobortis non pellentesque nec, finibus et neque. Pellentesque molestie non sem non posuere. Aliquam dapibus dui placerat mauris molestie auctor. Quisque nec erat non metus iaculis pulvinar. Vestibulum at orci ligula. Phasellus at aliquam tellus. Suspendisse sit amet nulla lectus. Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     },
     {
-      name: 'Adidas Fit Pant',
-      slug: 'adidas-fit-pant',
+      name: 'Adidas Fit pantalon',
+      slug: 'adidas-fit-pantalon',
       category: 'Pantalon',
       image: '/images/p4.jpg',
       price: 65,
